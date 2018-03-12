@@ -18,7 +18,7 @@ class UserManager(models.Manager):
 				errors['username'] = "Username must contain at least 3 letters!"
 			elif not NAME_REGEX.match(postData['username']):
 				errors['username'] = "Username cannot be blank and can only contain letters!"
-			elif User.objects.filter(uername=postData['username']):
+			elif User.objects.filter(username=postData['username']):
 				errors['username'] = "Username already being used!"
 			elif len(postData['pw']) < 9:
 				errors['pw'] = "Password must contain more than 8 characters!"
