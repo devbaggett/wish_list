@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Buddy</title>
+</head>
+<body>
+  <h1>Welcome!</h1>
+  
+    <h2>New user registration</h2>
+    {% if messages %}
+        {% for message in messages %}
+          <p>{{ message.message }}</p>
+        {% endfor %}
+      {% endif %}
+    <form action="/register" method="POST">
+      {% csrf_token %}
+      Name: <input type="text" name="name"><br>
+      Username: <input type="text" name="username"><br>
+      Password: <input type="password" name="pw"><br>
+      Confirm: <input type="password" name="confirm_pw"><br>
+      Date Hired: <input type="date" name="date_hired"><br>
+      <input type="submit" value="Register">
+    </form>
+
+    <h2>Existing users login here</h2>
+    <form action="/login" method="POST">
+      {% csrf_token %}
+      Username: <input type="text" name="user_login"><br>
+      Password: <input type="password" name="pw_login"><br>
+      <input type="submit" value="Login">
+    </form>
+  
+
+
+    
+</body>
+</html>

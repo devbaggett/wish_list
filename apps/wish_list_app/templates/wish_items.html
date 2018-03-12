@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wish Items</title>
+</head>
+<body>
+	<div id="header">
+      <a href="/dashboard" style="display: inline-block; margin-left: 700px;">Home</a>
+      <a href="/logout" style="display: inline-block; margin-left: 20px;">Logout</a>
+  	</div>
+  	<div>
+  		<h2>{{ this_item }}</h2>
+      <h4>Users who added this product/item under their wish list:</h4>
+      {% for user in shared_users %}
+  		  <p>{{ user.name }}</p>
+      {% endfor %}
+  	</div>
+
+</body>
+</html>
